@@ -10,8 +10,7 @@
 Docstring comments appear in a different shade when they are not part of the first line
 """
 # A single-line comment example
-pass  # This is an inline comment
-
+a = 3  # This is an inline comment
 
 
 #------Concept 2: Input / Output -------
@@ -22,12 +21,13 @@ pass  # This is an inline comment
     - Use f-strings for clean output formatting
 """
 
-pass
-pass
+# name = input("Enter your name: ")
+# age = input("How old are you? ")
+#
+# print(f"Hi {name}, you are {age} years old")
+# print("In 5 years you will be", int(age) + 5) # Comma seperated argument (2)
+# print("In 5 years you will be" + " " + str(int(age)+5)) # Treats it as one full string
 
-
-
-pass # Results in an error because all inputs are strings by default (age)
 
 
 
@@ -39,13 +39,12 @@ pass # Results in an error because all inputs are strings by default (age)
     - Python variables can change type, but use consistently
 """
 
-pass
-pass  # x is now 7
-pass
-pass
-
-pass
-
+# x = 5
+# x += 2  # x is now 7 (same x = x + 2)
+# name = "R2-D2" # Python knows his is a string
+# status = True # This is a boolean
+#
+# print(f"{name} status:", status, sep = '\n')
 
 #------Concept 4: Operators -------
 """
@@ -56,18 +55,21 @@ pass
 """
 
 # Arithmetic
-pass # addition
-pass # modulus (remainder)
-pass # Exponents
+# a = 10 + 5 # addition
+# b = 20 % 7 # modulus (remainder)
+# # print(b)
+# c = 2 ** 3 # Exponents
+# print(c)
 
 # # Comparison
-pass     # True
-pass     # True
+# print(c == 8)     # True
+# print(c != 10)     # True
+# print(f"{c is not 10}")
 
 # Logical
-temperature = 25
-pass  # True
-pass # True
+# temperature = 25
+# print(temperature > 20 and temperature < 30)  # True
+# print(temperature > 20 and not temperature > 30) # True
 
 
 
@@ -80,19 +82,35 @@ pass # True
 """
 
 # a = 42          # int
+# print(type(a))
 # b = 3.14        # float
 # c = "robot"     # str
+# c1 = '3' # Still a string
+# c2 = int(c1) # Now it's a int
+# print(type(c2))
 # d = True        # bool
 
 
 # List (mutable)
-
-
+# sensors = [20,40,50]
+# sensors.append(100)
+#
+# print(sensors)
+#
+# sensors.insert(0, 15)
+# print(sensors)
+#
+# print(sensors[1])
+# sensors[1] = 30
+#
+# print(sensors)
 
 
 # Tuple (immutable)
-
-
+# position = ()
+# position = (5,10)
+# position.append(5) # Can't add elements to a tuple
+# print(position[1])
 
 
 
@@ -103,10 +121,28 @@ pass # True
     - Use and, or, not to combine conditions
 """
 
-temp = 22
+# temp = 22
+# if temp > 30:
+#     print("It's hot")
+#
+# elif temp >= 20:
+#     print("Its warm")
+# else:
+#     print("Its cold")
 
+temp = 32
+# if temp > 30:
+#     print("It's hot")
+#
+# if temp >= 20:
+#     print("Its warm")
+#
+# else:
+#     print("Its cold")
 
-
+# battery = 80
+# if battery > 50 and temp < 35:
+#     print("System is ready")
 
 
 
@@ -118,17 +154,32 @@ temp = 22
 """
 
 # for loop with range
-
+# for i in range(3):
+#     print("Hello", i)
 
 
 # for loop over list
-
+# colors = ['red', 'green', 'blue']
+# for color in colors:
+#     print(f"The color is: {color}")
+#
+# for i in range(len(colors)):
+#     print(f"The color is: {colors[i]}")
 
 
 
 # while loop
-
-
+# x = 0
+# while x < 11:
+#     print(f"x is: {x}")
+#     x += 1
+#
+# y = 0
+# while True:
+#     print(y)
+#     y += 1
+#     if y > 11:
+#         break
 
 
 
@@ -139,27 +190,43 @@ temp = 22
     - Use return to send back a result
 """
 # #No parameters passed
+def greet():
+    print("Hello, Human")
 
+greet()
 
 
 # #One (or more parameters passed)
-
-
+# def greet(name):
+#     print(f"Hello {name}")
+#
+# a_name = input("WHat is your name: ")
+# greet(a_name)
 
 
 #Using keyword parameters
-
-
-
+# def system_check(started = False, fault = False):
+#     print(started, fault)
+#
+# system_check(fault=True, started = True)
 
 #Using a return
+# def square(n):
+#     return n * n
 
+# print(square(5))
+# result = square(5)
 
+# result += 5
+# print(result)
 
 
 # # Using type hints to indicate what data type Python should expect
+def data (temp : float, dist : int):
+    print('temperature:', temp)
+    print('distance', dist)
 
-
+data(32, 50)
 
 
 
