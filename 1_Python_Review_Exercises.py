@@ -32,7 +32,7 @@ Exercises:
 
 
 
-#6. Write a function that takes two numbers, adds them together, and returns the result. Then call the function.
+#6. Write a function that takes two numbers as floats, adds them together, and returns the result. Then call the function.
 
 
 
