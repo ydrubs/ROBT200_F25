@@ -190,10 +190,10 @@ temp = 32
     - Use return to send back a result
 """
 # #No parameters passed
-def greet():
-    print("Hello, Human")
-
-greet()
+# def greet():
+#     print("Hello, Human")
+#
+# greet()
 
 
 # #One (or more parameters passed)
@@ -222,11 +222,11 @@ greet()
 
 
 # # Using type hints to indicate what data type Python should expect
-def data (temp : float, dist : int):
-    print('temperature:', temp)
-    print('distance', dist)
-
-data(32, 50)
+# def data (temp : float, dist : int):
+#     print('temperature:', temp)
+#     print('distance', dist)
+#
+# data(32, 50)
 
 
 
@@ -238,19 +238,25 @@ data(32, 50)
 """
 
 # # Import full module with all built-in function
-pass
-pass # call the function from the module using dot-notation
-
+import math
+result = math.sqrt(16) # call the function from the module using dot-notation
+print(result)
 
 
 # Import specific function only
-
+from random import randint
+print(randint(1,10))
 
 
 
 # # Import with alias, useful with modules that have long or awkward names
-
+import time as t
+for i in range(10):
+    print("It's time")
+    t.sleep(1)
 
 
 
 # Import multiple functions from a module
+from random import randint, random
+print(randint(1,10), random())
