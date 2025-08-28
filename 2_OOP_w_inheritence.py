@@ -1,5 +1,4 @@
 
-
 # Define a simple class to represent a playing card
 class Card:
         """
