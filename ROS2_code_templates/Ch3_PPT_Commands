@@ -1,0 +1,46 @@
+ROS2 Core Concepts from PPT – Command Reference
+
+1. Running Nodes
+    ros2 run demo_nodes_cpp talker
+    ros2 run demo_nodes_cpp listener
+    ros2 run turtlesim turtlesim_node
+    ros2 run turtlesim turtle_teleop_key
+
+2. Introspecting Nodes
+    rqt_graph
+    ros2 node list
+
+3. Inspecting Topics
+    ros2 topic list
+    ros2 topic info /topic_name
+    ros2 topic echo /topic_name
+    ros2 topic info /turtle1/cmd_vel
+    ros2 topic echo /turtle1/cmd_vel
+    4. Exploring Interfaces
+    ros2 interface show geometry_msgs/msg/Twist
+
+5. Publishing to Topics
+    ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0}, angular: {z: 1.0}}"
+    ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0}, angular: {z: 1.0}}"
+
+
+6. Working with Services
+    ros2 service list
+    ros2 service type /spawn
+    ros2 interface show turtlesim/srv/Spawn
+    ros2 service call /spawn turtlesim/srv/Spawn "{x: 2.0, y: 6.0, theta: 0.0, name: 'Bob'}"
+    ros2 service call /kill turtlesim/srv/Kill "{name: 'Bob'}"
+
+7. Working with Actions
+    ros2 action list
+    ros2 action info /turtle1/rotate_absolute -t
+    ros2 interface show turtlesim/action/RotateAbsolute
+    ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: 1.0}"
+
+8. Using Parameters
+    ros2 param list
+    ros2 param get /turtlesim background_b
+    ros2 param set /turtlesim background_r 200
+    ros2 param set /turtlesim background_g 100
+    ros2 param set /turtlesim background_b 50
+    ros2 run turtlesim turtlesim_node --ros-args -p background_b:=50 -p background_g:=100 -p background_r:=255
