@@ -1,0 +1,17 @@
+# Copy the following in the package.xml file
+# This will go after the lines: <buildtool_depend>ament_cmake</buildtool_depend>:
+
+    <build_depend>rosidl_default_generators</build_depend>
+    <exec_depend>rosidl_default_runtime</exec_depend>
+    <member_of_group>rosidl_interface_packages</member_of_group>
+
+
+# Copy the following into the CMakeList.txt file
+# After find_package(ament_cmake REQUIRED), and before ament_package(),
+        #add the following lines (you can also remove the if(BUILD_TESTING) block):
+
+    find_package(rosidl_default_generators REQUIRED)
+    rosidl_generate_interfaces(${PROJECT_NAME}
+      # we will add the name of our custom interfaces here
+    )
+    ament_export_dependencies(rosidl_default_runtime)
