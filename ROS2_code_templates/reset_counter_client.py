@@ -5,7 +5,7 @@ from rclpy.node import Node
 
 from my_robot_interfaces.srv import ResetCounter # import the interface for the server
 
-class MyCustomNode(Node):
+class ResetCounterClientNode(Node):
     def __init__(self):
         super().__init__('reset_counter_client')
 
@@ -49,7 +49,7 @@ class MyCustomNode(Node):
 def main(args=None):
 
     rclpy.init(args=args)            # Initialize the ROS2 Python client library
-    node = MyCustomNode()            # Create an instance of the custom node (registers it with ROS2)
+    node = ResetCounterClientNode()            # Create an instance of the custom node (registers it with ROS2)
 
     node.call_reset_counter(10)      # Call the function which will communicate with the server and pass in a value of 10 (to reset the count to)
 
